@@ -1,0 +1,17 @@
+server:
+  #服务注册中心端口号
+  port: 8761
+eureka:
+  instence:
+    #服务注册中心实例的主机名
+    hostname: localhost
+  client:
+    #是否向服务注册中心注册自己
+    registerWithEureka: false
+    #是否检索服务
+    fetchRegistry: false
+#    register-with-eureka: false
+#    fetch-registry: false
+    serviceUrl:
+      #服务注册中心的配置内容，指定服务注册中心的位置
+      defaultZone: http://${eureka.instence.hostname}:${server.port}/eureka/
